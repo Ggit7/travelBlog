@@ -21,12 +21,7 @@ mongoose.connect(config.connect);
 
 const app=express();
 app.use(express.json());
-app.use(cros({
-    origin:["https://travel-blog-api.vercel.app"],
-    methods: ["post" , "get", "put ","delete"],
-    credentials: true
-        }
-            ));
+app.use(cros({origin:"*"}));
 
 //registration
 app.post("/registration",async(req,res)=>{
